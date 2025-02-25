@@ -1,7 +1,7 @@
 # Calculadora JavaScript
 
 [![Hcode![calculadora_hrcode]
- Treinamentos](())](https://www.hcode.com.br)
+ Treinamentos](https://www.hcode.com.br)
 
 Calculadora desenvolvida como exemplo do Curso Completo de JavaScript na Udemy.com.
 
