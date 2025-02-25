@@ -10,14 +10,19 @@ class CalcController{
  
 }
 
-  initialize(){
+initialize() {
+  
+  this.setDisplayDateTime();
+  setInterval(() => {
+    this.setDisplayDateTime();
+  }, 1000);
+}
 
-    setInterval(()=>{
-     this.displayDate=this.currentDate.toLocaleDateString(this._locale);
-     this.displayTime=this.currentDate.toLocaleTimeString(this._locale);
-   
-    },1000);
-
+setDisplayDateTime() {
+ 
+  this.displayDate = this.currentDate.toLocaleDateString(this._locale);
+  this.displayTime = this.currentDate.toLocaleTimeString(this._locale);
+}
 
    /* 
     Example
@@ -36,9 +41,7 @@ class CalcController{
 
     }, 10000);*/
 
-
- 
-  }
+  
 
 get displayTime(){
 return this._timeEl.innerHTML;
