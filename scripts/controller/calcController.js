@@ -45,7 +45,8 @@ this._audioOnOff = false;
     this.setLastNumberToDisplay();
     this. pasteFromClipboard();
 
-    document.querySelectorAll('.brn-ac').forEach(btn=>{
+ 
+    document.querySelectorAll('.btn-ac').forEach(btn=>{
       btn.addEventListener('dblclick', e=>{
       this.toggleAudio();
       });
@@ -54,6 +55,7 @@ this._audioOnOff = false;
   }
   playAudio() {
     if(this._audioOnOff){
+      this._audio.currentTime=0;
       this._audio.play();
     }
   }
