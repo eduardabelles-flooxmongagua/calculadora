@@ -126,7 +126,7 @@ class CalcController {
         this.pushOperation(value);
       } else {
         let newValue = this.getLastOperation().toString() + value.toString();
-        this.setLastOperation(parseFloat(newValue));
+        this.setLastOperation(newValue);
         this.setLastNumberToDisplay();
       }
     }
@@ -139,18 +139,20 @@ class CalcController {
   
   addDot() {
     let lastOperation = this.getLastOperation();
-  
+    if (typeof lastOperation === 'string' && lastOperation.includes('.')) {
+        return; 
+    }
 
     if (this.isOperation(lastOperation) || !lastOperation) {
-    
-      this.pushOperation('0.');
+        this.pushOperation('0.');
     } else {
-     
-      this.setLastOperation(lastOperation.toString() + '.');
+      
+        this.setLastOperation(lastOperation.toString() + '.');
     }
-  
+
     this.setLastNumberToDisplay();
-  }
+}
+
   
   execBtn(value) {
     switch (value) {
