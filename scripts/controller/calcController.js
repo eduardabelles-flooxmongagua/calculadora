@@ -158,7 +158,13 @@ this._audioOnOff = false;
   }
 
   getResult() {
+    try{
     return eval(this._operation.join(""));
+  }catch(e){
+    setTimeout(()=>{
+  this.setError();
+  },1);
+}
   }
 
   calc() {
