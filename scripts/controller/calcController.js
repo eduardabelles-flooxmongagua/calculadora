@@ -28,7 +28,8 @@ class CalcController {
 
   clearAll() {
     this._operation = [];
-    this.displayCalc = "";
+    this._lastNumber='';
+    this._lastOperator='';
     this.setLastNumberToDisplay();
   }
 
